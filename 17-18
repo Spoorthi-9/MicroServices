@@ -1,0 +1,27 @@
+# Docker volume and port mapping
+docker run -d nginx
+docker run -d -p 8084:80 nginx
+docker volume create vol
+docker volume ls
+docker run -it -v vol: /data ubuntu bash
+cd data
+echo " ">test.txt
+exit
+docker run -d -p 8085:80 -v vol:/usr/share/nginx/html nginx
+docker run -it -v vol: /data ubuntu bash
+cd data
+echo "<h1>Persistent Web page</h1>"/data/index.html
+exit
+
+#Docker image push to Docker Hub
+docker --version
+docker images
+docker login
+create a folder with dockerfile and java code 
+docker build -t java-app .
+docker run -t java-app
+docker build -t java-app1 .
+docker tag java-app spoorthikm9/java-app1:v1
+docker login
+docker push spoorthikm9/java-app1:v1
+check in docker hub repositories
