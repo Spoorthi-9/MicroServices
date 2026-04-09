@@ -29,6 +29,11 @@ void testDivision() {
 assertEquals(2, calculator.divide(10,5));
 }
 @Test
+void testMultiply() {
+assertEquals(20, calculator.multiply(4, 5));
+}
+
+@Test
 void testDivideByZero() {
 Exception exception = assertThrows(
 IllegalArgumentException.class,
