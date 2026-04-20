@@ -1,0 +1,31 @@
+public class GreatestNumber{
+public int greatest(int a, int b, int c){
+ return Math.max(a, Math.max(b,c));
+
+
+
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+
+public class GreatestNumberTest {
+
+    @Test
+    public void testCase1() {
+        assertEquals(25, GreatestNumber.findGreatest(10, 25, 15));
+    }
+
+    @Test
+    public void testCase2() {
+        assertEquals(50, GreatestNumber.findGreatest(50, 20, 30));
+    }
+
+    @Test
+    public void testCase3() {
+        assertEquals(7, GreatestNumber.findGreatest(3, 7, 5));
+    }
+
+    @Test
+    public void testCase4() {
+        assertEquals(-1, GreatestNumber.findGreatest(-1, -5, -10));
+    }
+}
