@@ -4,28 +4,31 @@ public int greatest(int a, int b, int c){
 
 
 
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
+package com.bnmit;
 
-public class GreatestNumberTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.beans.Transient;
+
+import org.junit.jupiter.api.Test;
+
+
+public class AppTest {
+
+    GreatestNumber g=new GreatestNumber();
+
+    
     @Test
-    public void testCase1() {
-        assertEquals(25, GreatestNumber.findGreatest(10, 25, 15));
+    void testWhenFirstIsGreatest(){
+        assertEquals(10,g.greatest(10,2,5));
+    }
+    @Test
+    void testWhenSecondIsGreatest(){
+        assertEquals(20, g.greatest(2,20,10));
+    }
+    @Test
+    void testWhenThirdIsGreatest(){
+        assertEquals(50, g.greatest(3,30,50));
+    }
     }
 
-    @Test
-    public void testCase2() {
-        assertEquals(50, GreatestNumber.findGreatest(50, 20, 30));
-    }
-
-    @Test
-    public void testCase3() {
-        assertEquals(7, GreatestNumber.findGreatest(3, 7, 5));
-    }
-
-    @Test
-    public void testCase4() {
-        assertEquals(-1, GreatestNumber.findGreatest(-1, -5, -10));
-    }
-}
